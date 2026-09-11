@@ -44,11 +44,9 @@ Los datasets no se incluyen en el repositorio. Deben descargarse y dejarse en `d
 | Home Credit Default Risk | [Kaggle](https://www.kaggle.com/c/home-credit-default-risk) | `data/home-credit-default-risk/` |
 | Lending Club | [Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club) | `data/lending-club/` |
 
-`TFG_analisis_datasets.ipynb` necesita los cinco. El experimento usa por ahora solo el de
+El experimento usa por ahora solo el de
 Taiwán: South German Credit es el segundo dataset elegido en el informe, pero todavía no está
-incorporado a `TFG_SHAP_credit_scoring.ipynb`. Ese notebook busca automáticamente el `.xls` de
-UCI (o la copia `.csv` de Kaggle) en `data/default+of+credit+card+clients/`; la ruta se puede
-fijar a mano en la variable `RUTA_DATOS`.
+incorporado a `TFG_SHAP_credit_scoring.ipynb`.
 
 ## Entorno
 
