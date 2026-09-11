@@ -16,9 +16,11 @@ las explicaciones locales.
 ├── code/
 │   ├── TFG_analisis_datasets.ipynb     # análisis de los cinco datasets candidatos
 │   ├── TFG_SHAP_credit_scoring.ipynb   # experimento completo sobre el dataset de Taiwán
-│   └── resultados/                     # figuras, tablas y resumen del experimento SHAP
+│   └── resultados/                     # figuras, tablas, resumen JSON y .npz (no versionado)
 ├── data/                               # datasets (no versionados, ver más abajo)
-├── Informe_TFG_agosto_revisado.docx    # informe de datasets, bibliografía y propuesta de trabajo
+├── documentos/
+│   └── Documento_TFG_agosto_revisado.docx   # informe: datasets, bibliografía y propuesta
+├── README.md
 ├── pyproject.toml / uv.lock            # dependencias fijadas
 └── .python-version                     # Python 3.9
 ```
@@ -42,10 +44,11 @@ Los datasets no se incluyen en el repositorio. Deben descargarse y dejarse en `d
 | Home Credit Default Risk | [Kaggle](https://www.kaggle.com/c/home-credit-default-risk) | `data/home-credit-default-risk/` |
 | Lending Club | [Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club) | `data/lending-club/` |
 
-Los dos primeros son los que usa el experimento; los otros tres solo hacen falta para el
-notebook de análisis de datasets. `TFG_SHAP_credit_scoring.ipynb` busca automáticamente el
-`.xls` de UCI (o la copia `.csv` de Kaggle) en la carpeta del dataset principal; la ruta se
-puede fijar a mano en la variable `RUTA_DATOS`.
+`TFG_analisis_datasets.ipynb` necesita los cinco. El experimento usa por ahora solo el de
+Taiwán: South German Credit es el segundo dataset elegido en el informe, pero todavía no está
+incorporado a `TFG_SHAP_credit_scoring.ipynb`. Ese notebook busca automáticamente el `.xls` de
+UCI (o la copia `.csv` de Kaggle) en `data/default+of+credit+card+clients/`; la ruta se puede
+fijar a mano en la variable `RUTA_DATOS`.
 
 ## Entorno
 
@@ -63,6 +66,3 @@ Para ejecutar el notebook completo sin abrirlo:
 cd code
 uv run jupyter nbconvert --to notebook --execute --inplace TFG_SHAP_credit_scoring.ipynb
 ```
-
-Las figuras se guardan en `code/resultados/figuras/`, las tablas en
-`code/resultados/tablas/` y un resumen numérico en `code/resultados/resumen_experimento.json`.
