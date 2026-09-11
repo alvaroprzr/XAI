@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Entornos virtuales
+.venv/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents/
+*.nbconvert.ipynb
+
+# Datos (se descargan de UCI / Kaggle)
+data/
+
+# Resultados regenerables desde el notebook
+code/resultados/
+
+# Editores y sistema operativo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ficheros temporales y de bloqueo de Office
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.tmp
