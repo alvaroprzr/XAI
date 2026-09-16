@@ -4,10 +4,7 @@ Trabajo de Fin de Grado del Grado en Ciencia e Ingeniería de Datos (Universidad
 
 Se estudia hasta qué punto las explicaciones SHAP de un modelo de caja negra (XGBoost)
 son estables y coherentes cuando se aplican a la concesión de crédito, tomando como
-referencia una regresión logística entrenada sobre los mismos datos. Se analizan cuatro
-dimensiones: concordancia con la logística, estabilidad ante el reentrenamiento,
-estabilidad ante el conjunto de referencia (*background*) y consistencia/coherencia de
-las explicaciones locales.
+referencia una regresión logística entrenada sobre los mismos datos.
 
 ## Estructura del repositorio
 
@@ -15,11 +12,12 @@ las explicaciones locales.
 .
 ├── code/
 │   ├── TFG_analisis_datasets.ipynb     # análisis de los cinco datasets candidatos
-│   ├── TFG_SHAP_credit_scoring.ipynb   # experimento completo sobre el dataset de Taiwán
-│   └── resultados/                     # figuras, tablas, resumen JSON y .npz (no versionado)
+│   └── TFG_SHAP_credit_scoring.ipynb   # experimento usando shap sobre el dataset de Taiwán
 ├── data/                               # datasets (no versionados, ver más abajo)
 ├── documentos/
-│   └── Documento_TFG_agosto_revisado.docx   # informe: datasets, bibliografía y propuesta
+│   └── Documento_TFG_agosto_revisado.docx   # boceto, previo a los informes
+├── informes/
+│   └── Informe_fase_inicial_TFG.docx        # informe de la fase inicial
 ├── README.md
 ├── pyproject.toml / uv.lock            # dependencias fijadas
 └── .python-version                     # Python 3.9
@@ -28,9 +26,8 @@ las explicaciones locales.
 `TFG_analisis_datasets.ipynb` explora los cinco datasets candidatos y produce las cifras que
 después se recogen en el informe: tamaño, número y tipo de variables, definición y tasa de la
 variable objetivo, desequilibrio, valores perdidos, inventario de ficheros y anomalías de
-codificación. Termina con una ficha por dataset, con los números ya formateados, lista para
-trasladar al documento. No escribe nada en disco: todo queda en el propio notebook. Necesita
-los cinco datasets descargados.
+codificación.
+Se necesitan los cinco datasets descargados si se quiere ejecutar.
 
 ## Datos
 
@@ -38,15 +35,13 @@ Los datasets no se incluyen en el repositorio. Deben descargarse y dejarse en `d
 
 | Dataset | Fuente | Carpeta esperada |
 |---|---|---|
-| Default of Credit Card Clients (principal) | [UCI #350](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients) | `data/default+of+credit+card+clients/` |
-| South German Credit (secundario) | [UCI #573](https://archive.ics.uci.edu/dataset/573/south+german+credit) | `data/south+german+credit+update/` |
+| Default of Credit Card Clients (principal elección) | [UCI #350](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients) | `data/default+of+credit+card+clients/` |
+| South German Credit | [UCI #573](https://archive.ics.uci.edu/dataset/573/south+german+credit) | `data/south+german+credit+update/` |
 | Give Me Some Credit | [Kaggle](https://www.kaggle.com/c/GiveMeSomeCredit) | `data/GiveMeSomeCredit/` |
 | Home Credit Default Risk | [Kaggle](https://www.kaggle.com/c/home-credit-default-risk) | `data/home-credit-default-risk/` |
 | Lending Club | [Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club) | `data/lending-club/` |
 
-El experimento usa por ahora solo el de
-Taiwán: South German Credit es el segundo dataset elegido en el informe, pero todavía no está
-incorporado a `TFG_SHAP_credit_scoring.ipynb`.
+El experimento usa solo el de Taiwán, en `TFG_SHAP_credit_scoring.ipynb`.
 
 ## Entorno
 

@@ -21,6 +21,7 @@ venv/
 
 # Datos (se descargan de UCI / Kaggle)
 data/
+data.zip
 
 # Resultados regenerables desde el notebook
 code/resultados/
